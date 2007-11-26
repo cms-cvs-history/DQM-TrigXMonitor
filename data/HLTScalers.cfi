@@ -1,0 +1,5 @@
+# HLT scalers. wittich 11/07
+ module hlts = HLTScalers { 
+    untracked bool debug = false
+    InputTag triggerResults = "TriggerResults::HLT"
+ }
