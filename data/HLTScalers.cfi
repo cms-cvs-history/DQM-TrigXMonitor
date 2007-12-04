@@ -1,7 +1,13 @@
 # HLT scalers. wittich 11/07
-# $Id$
-# $Log$
+# $Id: HLTScalers.cfi,v 1.2 2007/12/01 19:28:51 wittich Exp $
+# $Log: HLTScalers.cfi,v $
+# Revision 1.2  2007/12/01 19:28:51  wittich
+# - fix cfi file (debug -> verbose, HLT -> FU for TriggerResults  label)
+# - handle multiple beginRun for same run (don't call reset on DQM )
+# - remove PathTimerService from cfg file in test subdir
+#
  module hlts = HLTScalers { 
     untracked bool verbose = false
-    InputTag triggerResults = "TriggerResults::FU"
+    InputTag triggerResults = "TriggerResults::HLT"
+    InputTag l1GtData       = "l1GtUnpack::HLT"
  }
