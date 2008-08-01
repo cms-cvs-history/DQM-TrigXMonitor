@@ -1,6 +1,13 @@
 # HLT scalers. wittich 11/07
-# $Id: HLTScalers.cfi,v 1.2 2007/12/01 19:28:51 wittich Exp $
+# $Id: HLTScalers.cfi,v 1.3 2007/12/04 20:24:32 wittich Exp $
 # $Log: HLTScalers.cfi,v $
+# Revision 1.3  2007/12/04 20:24:32  wittich
+# - make hlt histograms variable width depending on path
+# - add strings for path names
+# - add int for nprocessed
+# - add L1 scaler locally derived on Kaori's suggestion
+#   + updates to cfi file for this, need to include unpacking of GT
+#
 # Revision 1.2  2007/12/01 19:28:51  wittich
 # - fix cfi file (debug -> verbose, HLT -> FU for TriggerResults  label)
 # - handle multiple beginRun for same run (don't call reset on DQM )
@@ -8,6 +15,11 @@
 #
  module hlts = HLTScalers { 
     untracked bool verbose = false
+#    untracked bool specifyPaths = true
+#    untracked vstring pathNames = {'HLT1MuonIso',
+#  				'HLT1MuonNonIso',
+#  				'HLT2MuonIso',
+#  				'HLT2MuonNonIso'}
     InputTag triggerResults = "TriggerResults::HLT"
     InputTag l1GtData       = "l1GtUnpack::HLT"
  }
